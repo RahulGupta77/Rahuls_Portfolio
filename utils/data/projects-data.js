@@ -50,7 +50,7 @@ export const projectsData = [
       "Built a single page application with JavaScript DOM manipulation, HTML5, and CSS3, featuring two tabs for a seamless user experience",
     ],
     code: "https://github.com/RahulGupta77/Weather-app",
-    demo: "weather-app-rahul-gupta.netlify.app/",
+    demo: "https://weather-app-rahul-gupta.netlify.app/",
     image: weatherApp,
   },
 ];

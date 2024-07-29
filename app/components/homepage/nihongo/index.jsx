@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { FaArrowRight } from 'react-icons/fa';
 
-function Nihongo({ blogs }) {
+function Nihongo() {
 
   return (
     <div
@@ -33,7 +33,7 @@ function Nihongo({ blogs }) {
           role="button"
           href="/"
         >
-          <span>JLPT N5 Certificate </span>
+          <span>JLPT N4 Certificate </span>
           <FaArrowRight size={16} />
         </Link>
       </div>
@@ -43,7 +43,7 @@ function Nihongo({ blogs }) {
           role="button"
           href="/"
         >
-          <span>JLPT N4 Certificate </span>
+          <span>JLPT N5 Certificate </span>
           <FaArrowRight size={16} />
         </Link>
       </div>

@@ -54,7 +54,7 @@ function ContactForm() {
           message: "",
         });
       } else {
-        toast.error("Failed to send message via EmailJS.");
+        toast.error("Failed to send message via Email");
       }
     } catch (error) {
       console.error("Error sending email:", error);
