@@ -8,7 +8,5 @@ export const skillsData = [
   "MySQL",
   "Git",
   "Bootstrap",
-  "Firebase",
-  "MaterialUI",
 ];
 

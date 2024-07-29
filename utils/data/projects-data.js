@@ -22,7 +22,7 @@ export const projectsData = [
     name: "Qtrip Dynamic",
     description: [
       "QTrip is a travel website designed for adventurers seeking diverse experiences across various cities",
-      "Created engaging web pages using HTML and CSS, and enhanced their functionality with JavaScript to provide a dynamic user experience",
+      "Created engaging web pages using HTML, CSS, Bootstrap, and enhanced their functionality with JavaScript to provide a dynamic user experience",
       "Utilized localStorage to save user preferences on the client side, providing a seamless and personalized experience for returning user",
     ],
     code: "https://github.com/RahulGupta77/QTrip-Dynamic.git",
