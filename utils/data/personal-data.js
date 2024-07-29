@@ -8,10 +8,8 @@ export const personalData = {
   phone: "+918766030074",
   address: "Mumbai, Maharashtra",
   github: "https://github.com/RahulGupta77",
-  facebook: "https://www.facebook.com/",
   linkedIn: "https://www.linkedin.com/in/rahul-gupta-aa60611a7/",
   twitter: "https://x.com/rahulguptaa29",
-  stackOverflow: "https://stackoverflow.com/",
   leetcode: "https://leetcode.com/u/RahulGupta77/",
   devUsername: "rahulgupta77",
   resume:
