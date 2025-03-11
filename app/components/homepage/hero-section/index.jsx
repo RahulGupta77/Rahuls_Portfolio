@@ -111,23 +111,25 @@ function HeroSection() {
               <div className="ml-4 lg:ml-8 mr-2">
                 <span className=" text-white">skills:</span>
                 <span className="text-gray-400">{`['`}</span>
+                <span className="text-amber-300">Javascript</span>
+                <span className="text-gray-400">{"', '"}</span>
                 <span className="text-amber-300">Java</span>
                 <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">Javascript</span>
+                <span className="text-amber-300">Python</span>
                 <span className="text-gray-400">{"', '"}</span>
                 <span className="text-amber-300">React</span>
                 <span className="text-gray-400">{"', '"}</span>
                 <span className="text-amber-300">Redux</span>
                 <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">TailwindCSS</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">Bootstrap</span>
-                <span className="text-gray-400">{"', '"}</span>
                 <span className="text-amber-300">MySQL</span>
                 <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">
-                  Data Structures & Algorithms
-                </span>
+                <span className="text-amber-300">Docker</span>
+                <span className="text-gray-400">{"', '"}</span>
+                <span className="text-amber-300">Kubernetes</span>
+                <span className="text-gray-400">{"', '"}</span>
+                <span className="text-amber-300">GCP</span>
+                <span className="text-gray-400">{"', '"}</span>
+                <span className="text-amber-300">AWS</span>
                 <span className="text-gray-400">{"'],"}</span>
               </div>
               <div>

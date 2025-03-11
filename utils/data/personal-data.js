@@ -1,9 +1,9 @@
 export const personalData = {
   name: "Rahul Gupta",
   profile: "/profile.png",
-  designation: "Software Developer",
+  designation: "Software Engineer",
   description:
-    "A passionate programmer with expertise in JavaScript, React, and Java, specializing in Web Application development. Currently focusing on advanced web technologies such as Next.js and TypeScript. I am always eager to contribute to dynamic and innovative projects. I have been studying Japanese since 2022.",
+    "A passionate full-stack developer with expertise in React, Flask, and cloud platforms like GCP and AWS. Skilled in Kubernetes and Docker, I specialize in scalable web applications. Currently exploring GenAI and Agentic Workflows. Always eager for innovative projects—and up for a snooker game! 😊",
   email: "rahulgupta34981@gmail.com",
   phone: "+918766030074",
   address: "Mumbai, Maharashtra",
