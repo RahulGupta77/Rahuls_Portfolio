@@ -21,6 +21,7 @@ import docker from "/public/svg/skills/docker.svg";
 import fastify from "/public/svg/skills/fastify.svg";
 import figma from "/public/svg/skills/figma.svg";
 import firebase from "/public/svg/skills/firebase.svg";
+import flask from "/public/svg/skills/flask.svg";
 import flutter from "/public/svg/skills/flutter.svg";
 import gcp from "/public/svg/skills/gcp.svg";
 import gimp from "/public/svg/skills/gimp.svg";
@@ -46,6 +47,7 @@ import mongoDB from "/public/svg/skills/mongoDB.svg";
 import mysql from "/public/svg/skills/mysql.svg";
 import nextJS from "/public/svg/skills/nextJS.svg";
 import nginx from "/public/svg/skills/nginx.svg";
+import nodejs from "/public/svg/skills/nodejs.svg";
 import numpy from "/public/svg/skills/numpy.svg";
 import nuxtJS from "/public/svg/skills/nuxtJS.svg";
 import opencv from "/public/svg/skills/opencv.svg";
@@ -79,6 +81,10 @@ export const skillsImage = (skill) => {
   switch (skillID) {
     case "gcp":
       return gcp;
+    case "nodejs":
+      return nodejs;
+    case "flask":
+      return flask;
     case "html":
       return html;
     case "photoshop":
