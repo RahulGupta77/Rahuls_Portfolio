@@ -3,7 +3,7 @@ export const personalData = {
   profile: "/profile.png",
   designation: "Software Engineer",
   description:
-    "A passionate Full-Stack developer with expertise in React, Flask, and cloud platforms like GCP and AWS. Skilled in Kubernetes and Docker, I specialize in scalable web applications. Currently exploring GenAI and Agentic Workflows. Always eager for innovative projects—and up for a snooker game! 😊",
+    "A passionate Full-Stack developer with expertise in React, Flask, and cloud platforms like GCP and AWS. Skilled in Kubernetes and Docker, I specialize in scalable web applications. Currently exploring GenAI and Agentic Workflows. Always eager for innovative projects and up for a snooker game! 😊",
   email: "rahulgupta34981@gmail.com",
   phone: "+918766030074",
   address: "Mumbai, Maharashtra",
