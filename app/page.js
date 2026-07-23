@@ -1,23 +1,30 @@
-import AboutSection from "./components/homepage/about";
-import ContactSection from "./components/homepage/contact";
-import Education from "./components/homepage/education";
-import Experience from "./components/homepage/experience";
-import HeroSection from "./components/homepage/hero-section";
-import Nihongo from "./components/homepage/nihongo";
-import Projects from "./components/homepage/projects";
-import Skills from "./components/homepage/skills";
+import { siteConfig } from "@/utils/data/site";
+import AboutHome from "./components/AboutHome";
+import Arrival from "./components/Arrival";
+import Builds from "./components/Builds";
+import LifeOrbit from "./components/LifeOrbit";
+import OpenChannel from "./components/OpenChannel";
+import ProfessionalJourney from "./components/ProfessionalJourney";
 
-export default async function Home() {
+export const metadata = {
+  title: {
+    absolute: siteConfig.title,
+  },
+  description: siteConfig.description,
+  alternates: {
+    canonical: "/",
+  },
+};
+
+export default function Home() {
   return (
-    <>
-      <HeroSection />
-      <AboutSection />
-      <Experience />
-      <Skills />
-      <Education />
-      <Projects />
-      <Nihongo />
-      <ContactSection />
-    </>
+    <div className="relative z-10 mx-auto max-w-5xl px-5 pb-6 sm:px-6 lg:px-8">
+      <Arrival />
+      <AboutHome />
+      <ProfessionalJourney />
+      <Builds />
+      <LifeOrbit />
+      <OpenChannel />
+    </div>
   );
 }

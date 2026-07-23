@@ -1,17 +1,18 @@
 export const personalData = {
   name: "Rahul Gupta",
   profile: "/profile-pic.png",
-  // 1 = original, lower = dimmer (try 0.85 – 1)
-  profileBrightness: 0.92,
+  profileBrightness: 1,
   designation: "Software Engineer",
+  tagline: "System design · Microservices · Distributed systems",
   description:
-    "A passionate Full-Stack developer with expertise in React, Flask, and cloud platforms like GCP and AWS. Skilled in Kubernetes and Docker, I specialize in scalable web applications. Currently exploring GenAI and Agentic Workflows. Always eager for innovative projects and up for a snooker game! 😊",
-  address: "Mumbai, Maharashtra",
+    "Software engineer from Mumbai, currently in Bangalore. I design and build distributed systems and production microservices — from IAM and real-time messaging to TB-scale document pipelines — with a strong focus on system design, reliability, and clean service boundaries.",
+  hometown: "Mumbai",
+  address: "Bangalore, India",
+  locationLabel: "From Mumbai · Based in Bangalore",
+  email: "rahul@rahulspace.com",
   github: "https://github.com/RahulGupta77",
   linkedIn: "https://www.linkedin.com/in/rahul-gupta-aa60611a7/",
   twitter: "https://x.com/rahulspace_",
   leetcode: "https://leetcode.com/u/RahulGupta77/",
   devUsername: "rahulspace",
-  // resume:
-  //   "https://drive.google.com/file/d/1ygQQUVtxe75mdFJh0siW1cZ97VF0Mm0k/view?usp=sharing",
 };
