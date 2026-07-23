@@ -22,7 +22,7 @@ function ProfilePhoto({ className = "" }) {
     <div className={`overflow-hidden rounded-full ring-1 ring-border ${className}`}>
       <Image
         src={personalData.profile}
-        alt={`${personalData.name}, ${personalData.designation} in Bangalore`}
+        alt={`Portrait of ${personalData.name}, ${personalData.designation} based in Bangalore`}
         width={250}
         height={250}
         priority

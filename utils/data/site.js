@@ -2,6 +2,8 @@ import { personalData } from "./personal-data";
 
 export const siteConfig = {
   name: personalData.name,
+  givenName: "Rahul",
+  familyName: "Gupta",
   shortName: "rahulspace",
   url: "https://rahulspace.com",
   locale: "en_IN",
@@ -24,7 +26,10 @@ export const siteConfig = {
     "Microservices",
     "Distributed Systems",
     "Spring Boot",
+    "Java",
     "Backend Engineer",
+    "IAM",
+    "Atlas AI",
     "rahulspace",
   ],
 
@@ -48,6 +53,10 @@ export const siteConfig = {
   worksFor: {
     name: "Atlas AI",
     url: "https://www.linkedin.com/company/atlas-ai",
+  },
+  alumniOf: {
+    name: "Maharashtra Institute of Technology, Pune",
+    degree: "B.Tech in Computer Science and Engineering",
   },
   location: {
     city: "Bangalore",

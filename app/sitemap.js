@@ -1,12 +1,14 @@
 import { siteConfig } from "@/utils/data/site";
 
+/**
+ * Next.js App Router sitemap — served at /sitemap.xml
+ * Single-page portfolio: homepage is the only indexable URL.
+ */
 export default function sitemap() {
-  const lastModified = new Date();
-
   return [
     {
       url: siteConfig.url,
-      lastModified,
+      lastModified: new Date().toISOString(),
       changeFrequency: "monthly",
       priority: 1,
     },

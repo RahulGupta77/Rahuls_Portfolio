@@ -12,6 +12,8 @@ export default function JsonLd() {
     "@type": "Person",
     "@id": `${siteConfig.url}/#person`,
     name: siteConfig.name,
+    givenName: siteConfig.givenName,
+    familyName: siteConfig.familyName,
     url: siteConfig.url,
     image: profileImage,
     jobTitle: siteConfig.jobTitle,
@@ -26,11 +28,20 @@ export default function JsonLd() {
     homeLocation: {
       "@type": "Place",
       name: siteConfig.location.hometown,
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: siteConfig.location.hometown,
+        addressCountry: siteConfig.location.country,
+      },
     },
     worksFor: {
       "@type": "Organization",
       name: siteConfig.worksFor.name,
       url: siteConfig.worksFor.url,
+    },
+    alumniOf: {
+      "@type": "CollegeOrUniversity",
+      name: siteConfig.alumniOf.name,
     },
     sameAs: siteConfig.sameAs,
     knowsAbout: [
@@ -41,7 +52,10 @@ export default function JsonLd() {
       "Java",
       "IAM",
       "Backend Engineering",
+      "WebSockets",
+      "Kafka",
     ],
+    knowsLanguage: ["English", "Hindi", "Japanese"],
   };
 
   const websiteSchema = {
@@ -49,7 +63,7 @@ export default function JsonLd() {
     "@id": `${siteConfig.url}/#website`,
     url: siteConfig.url,
     name: siteConfig.shortName,
-    alternateName: ["Rahul Gupta Portfolio", "rahulspace"],
+    alternateName: ["Rahul Gupta Portfolio", "rahulspace", siteConfig.name],
     description: siteConfig.description,
     publisher: { "@id": `${siteConfig.url}/#person` },
     inLanguage: siteConfig.language,
@@ -63,9 +77,11 @@ export default function JsonLd() {
     description: siteConfig.description,
     isPartOf: { "@id": `${siteConfig.url}/#website` },
     about: { "@id": `${siteConfig.url}/#person` },
+    mainEntity: { "@id": `${siteConfig.url}/#person` },
     primaryImageOfPage: {
       "@type": "ImageObject",
       url: profileImage,
+      caption: `${siteConfig.name}, ${siteConfig.jobTitle}`,
     },
     inLanguage: siteConfig.language,
   };

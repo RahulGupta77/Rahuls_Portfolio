@@ -34,3 +34,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local planning / SEO notes (for Cursor & local use only — do not commit)
+SITE_AND_SEO.md
+REVAMP_PLAN.md

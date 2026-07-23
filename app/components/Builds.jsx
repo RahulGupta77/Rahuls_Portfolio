@@ -14,7 +14,7 @@ function ProjectCard({ project, index }) {
           <div className="relative aspect-[16/9] overflow-hidden border-b border-border">
             <Image
               src={project.image}
-              alt={`${project.name} project screenshot${project.tag ? ` — ${project.tag}` : ""}`}
+              alt={`${project.name} — ${project.tag || "project"} screenshot by Rahul Gupta`}
               fill
               className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
               sizes="(max-width: 768px) 100vw, 50vw"

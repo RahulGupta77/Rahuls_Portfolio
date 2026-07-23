@@ -11,8 +11,37 @@ export const metadata = {
     absolute: siteConfig.title,
   },
   description: siteConfig.description,
+  keywords: siteConfig.keywords,
   alternates: {
     canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: siteConfig.locale,
+    url: siteConfig.url,
+    siteName: siteConfig.shortName,
+    title: siteConfig.title,
+    description: siteConfig.description,
+    images: [
+      {
+        url: siteConfig.ogImage.url,
+        width: siteConfig.ogImage.width,
+        height: siteConfig.ogImage.height,
+        alt: siteConfig.ogImage.alt,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteConfig.title,
+    description: siteConfig.description,
+    creator: siteConfig.twitterHandle,
+    site: siteConfig.twitterHandle,
+    images: [siteConfig.ogImage.url],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
