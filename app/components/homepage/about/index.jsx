@@ -29,6 +29,7 @@ function AboutSection() {
               height={480}
               alt="Rahul Gupta"
               className="rounded-full w-[260px] h-[260px] sm:w-[340px] sm:h-[340px] lg:w-[400px] lg:h-[400px] object-cover bg-[#e8e8ec]"
+              style={{ filter: `brightness(${personalData.profileBrightness})` }}
             />
           </div>
         </div>

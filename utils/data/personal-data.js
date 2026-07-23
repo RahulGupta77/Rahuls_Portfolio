@@ -1,6 +1,8 @@
 export const personalData = {
   name: "Rahul Gupta",
   profile: "/profile-pic.png",
+  // 1 = original, lower = dimmer (try 0.85 – 1)
+  profileBrightness: 0.92,
   designation: "Software Engineer",
   description:
     "A passionate Full-Stack developer with expertise in React, Flask, and cloud platforms like GCP and AWS. Skilled in Kubernetes and Docker, I specialize in scalable web applications. Currently exploring GenAI and Agentic Workflows. Always eager for innovative projects and up for a snooker game! 😊",
