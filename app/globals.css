@@ -8,51 +8,77 @@
   }
 }
 
-/* Light theme (default) */
+/* Lunar chalk (light) */
 :root {
-  --radius: 0.625rem;
-  --background: #ffffff;
-  --foreground: #171717;
-  --card: #ffffff;
-  --card-foreground: #171717;
-  --primary: #171717;
-  --primary-foreground: #fafafa;
-  --secondary: #f4f4f5;
-  --secondary-foreground: #171717;
-  --muted: #f4f4f5;
-  --muted-foreground: #71717a;
-  --accent: #2563eb;
+  --radius: 0.5rem;
+  --background: #f7f6f3;
+  --foreground: #1a1b1e;
+  --card: #fffcf7;
+  --card-foreground: #1a1b1e;
+  --primary: #1a1b1e;
+  --primary-foreground: #f7f6f3;
+  --secondary: #eceae4;
+  --secondary-foreground: #1a1b1e;
+  --muted: #eceae4;
+  --muted-foreground: #6b6e76;
+  /* Blue for text accents, links, and icons */
+  --accent: #3b82c4;
   --accent-foreground: #ffffff;
-  --border: #e4e4e7;
-  --input: #e4e4e7;
-  --ring: #2563eb;
-  --surface: #f8fafc;
-  --surface-hover: #f1f5f9;
-  --header-bg: rgba(255, 255, 255, 0.75);
-  --title-gradient: linear-gradient(to right, #0f172a, #1d4ed8, #0891b2);
+  --border: rgba(26, 27, 30, 0.1);
+  --input: rgba(26, 27, 30, 0.12);
+  --ring: #3b82c4;
+  --surface: rgba(26, 27, 30, 0.03);
+  --surface-hover: rgba(26, 27, 30, 0.055);
+  --header-bg: rgba(247, 246, 243, 0.78);
+  --dock-glass-bg: rgba(226, 226, 226, 0.88);
+  --dock-glass-bg-supported: rgba(226, 226, 226, 0.36);
+  --dock-glass-border: rgba(255, 255, 255, 0.45);
+  --dock-glass-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --nebula-a: rgba(59, 130, 196, 0.1);
+  --nebula-b: rgba(180, 150, 110, 0.08);
+  --star: rgba(26, 27, 30, 0.35);
+  --grid-line: rgba(26, 27, 30, 0.06);
+  --icon: #3b82c4;
+  --highlight: #3b82c4;
+  --link: #3b82c4;
+  --wipe-from: #f7f6f3;
+  --wipe-to: #0b0c10;
 }
 
-/* Dark theme */
+/* Deep space ink (dark) */
 .dark {
-  --background: #0a0a0a;
-  --foreground: #fafafa;
-  --card: #111111;
-  --card-foreground: #fafafa;
-  --primary: #fafafa;
-  --primary-foreground: #171717;
-  --secondary: #262626;
-  --secondary-foreground: #fafafa;
-  --muted: #262626;
-  --muted-foreground: #a1a1aa;
-  --accent: #60a5fa;
-  --accent-foreground: #ffffff;
-  --border: rgba(255, 255, 255, 0.1);
-  --input: rgba(255, 255, 255, 0.15);
-  --ring: #60a5fa;
-  --surface: rgba(255, 255, 255, 0.03);
-  --surface-hover: rgba(255, 255, 255, 0.06);
-  --header-bg: rgba(0, 0, 0, 0.5);
-  --title-gradient: linear-gradient(to right, #ffffff, #bfdbfe, #67e8f9);
+  --background: #0b0c10;
+  --foreground: #eeeae3;
+  --card: #12141a;
+  --card-foreground: #eeeae3;
+  --primary: #eeeae3;
+  --primary-foreground: #0b0c10;
+  --secondary: #1a1d26;
+  --secondary-foreground: #eeeae3;
+  --muted: #1a1d26;
+  --muted-foreground: #9a9ea8;
+  /* Soft blue for text accents, links, and icons */
+  --accent: #7eb8da;
+  --accent-foreground: #0b0c10;
+  --border: rgba(238, 234, 227, 0.1);
+  --input: rgba(238, 234, 227, 0.14);
+  --ring: #7eb8da;
+  --surface: rgba(238, 234, 227, 0.035);
+  --surface-hover: rgba(238, 234, 227, 0.06);
+  --header-bg: rgba(11, 12, 16, 0.72);
+  --dock-glass-bg: rgba(18, 20, 26, 0.88);
+  --dock-glass-bg-supported: rgba(18, 20, 26, 0.42);
+  --dock-glass-border: rgba(238, 234, 227, 0.14);
+  --dock-glass-shadow: 0 10px 32px rgba(0, 0, 0, 0.4);
+  --nebula-a: rgba(126, 184, 218, 0.09);
+  --nebula-b: rgba(120, 100, 160, 0.07);
+  --star: rgba(238, 234, 227, 0.55);
+  --grid-line: rgba(238, 234, 227, 0.055);
+  --icon: #7eb8da;
+  --highlight: #7eb8da;
+  --link: #7eb8da;
+  --wipe-from: #0b0c10;
+  --wipe-to: #f7f6f3;
 }
 
 @layer base {
@@ -71,11 +97,122 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
+  .dark {
+    color-scheme: dark;
+  }
+
+  input,
+  textarea,
+  select {
+    color-scheme: inherit;
+  }
+
+  input:-webkit-autofill,
+  textarea:-webkit-autofill,
+  select:-webkit-autofill {
+    -webkit-text-fill-color: var(--foreground);
+    caret-color: var(--foreground);
+    box-shadow: 0 0 0 1000px var(--surface) inset;
+    transition: background-color 9999s ease-out;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--accent) 35%, transparent);
+  }
 }
 
-.text-gradient-title {
-  background-image: var(--title-gradient);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.font-display {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  letter-spacing: -0.035em;
+}
+
+.text-icon {
+  color: var(--icon);
+}
+
+/* Apple-style frosted glass dock (mirrors Atlas navbar behavior) */
+.dock {
+  width: min(64rem, 100%);
+  margin-top: 0;
+  box-sizing: border-box;
+  border-radius: 0;
+  border: 1px solid transparent;
+  background-color: transparent;
+  padding: 0.875rem 1.25rem;
+  box-shadow: none;
+  transition:
+    width 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    margin-top 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    padding 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    border-radius 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+  will-change: width, margin-top, padding, border-radius, background-color;
+}
+
+.dock .dock-brand {
+  font-size: 1.125rem;
+  line-height: 1.2;
+  transition: font-size 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (min-width: 640px) {
+  .dock {
+    padding: 1rem 1.5rem;
+  }
+
+  .dock .dock-brand {
+    font-size: 1.25rem;
+  }
+}
+
+.dock--scrolled {
+  width: min(60rem, 100%);
+  margin-top: 0.5rem;
+  border-radius: 9999px;
+  border-color: var(--dock-glass-border);
+  background-color: var(--dock-glass-bg);
+  padding: 0.75rem 1.15rem;
+  box-shadow: var(--dock-glass-shadow);
+}
+
+.dock--scrolled .dock-brand {
+  font-size: 1.1rem;
+}
+
+@media (min-width: 640px) {
+  .dock--scrolled {
+    margin-top: 0.75rem;
+    padding: 0.85rem 1.4rem;
+  }
+
+  .dock--scrolled .dock-brand {
+    font-size: 1.2rem;
+  }
+}
+
+@supports ((-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))) {
+  .dock--scrolled {
+    background-color: var(--dock-glass-bg-supported);
+    -webkit-backdrop-filter: blur(20px) saturate(160%);
+    backdrop-filter: blur(20px) saturate(160%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dock {
+    transition: none;
+  }
 }

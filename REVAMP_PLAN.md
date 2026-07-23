@@ -1,208 +1,307 @@
-# Portfolio Revamp Plan — Rahul Gupta
+# rahulspace.com — Original Revamp Plan
 
-> Design inspiration only from `@imabhishek/`. All content remains Rahul’s original data.
-
----
-
-## 1. Analysis Summary
-
-### 1.1 Current `@Rahuls_Portfolio/` (Before)
-
-| Area | Current State |
-|------|---------------|
-| **Stack** | Next.js 14, React, Tailwind 3, Sass, Lottie, react-fast-marquee, EmailJS |
-| **Layout** | Wide container (`lg:max-w-[70rem]`–`2xl:max-w-[92rem]`), dark-only (`#0d1224`) |
-| **Nav** | Transparent navbar with section anchors (About, Experience, Skills, Projects, Education, 日本語) |
-| **Hero** | Split: greeting text + pink/teal accents + “code editor” mockup card |
-| **Sections** | About, Experience (GlowCard + Lottie), Skills (marquee), Education (GlowCard + Lottie), Projects (sticky cards), Nihongo, Contact (EmailJS form) |
-| **Theme** | Dark only — no light mode, no toggle |
-| **Motion** | Minimal (CSS hover / Lottie); no Framer Motion |
-| **Content to keep** | `personal-data`, `experience`, `educations`, `skills`, `projects-data`, `contactsData`, Nihongo certs, contact form logic |
-
-### 1.2 Design System of `@imabhishek/` (Inspiration)
-
-| Element | Pattern to Adopt |
-|---------|------------------|
-| **Layout** | Narrow centered column (`max-w-4xl mx-auto p-6 lg:p-8`) — editorial single-column feel |
-| **Header** | Sticky, translucent (`bg-black/50 backdrop-blur`), logo + live clock, mono accents |
-| **Hero** | Avatar left / name + title + description + CTA right; location + social icons under avatar |
-| **Section headers** | Icon badge (gradient border box) + large gradient title + animated full-width underline |
-| **Typography** | Inter (sans) + JetBrains Mono; bold tracking-tight titles; muted gray body |
-| **Color** | Near-black/white neutrals; blue/cyan accents (`blue-400`, `border-blue-500/30`); soft gradient text on headings |
-| **Cards** | Subtle `rounded-xl` + `border-blue-500/30` + translucent bg; hover lift/scale |
-| **Skills** | Responsive icon grid (2/4/5 cols), not marquee |
-| **Projects** | Horizontal media + content rows (image 1/3, details 2/3) with live/code links |
-| **Experience** | Clean stacked entries: company bold, role in accent blue, period muted, optional bullets |
-| **CTA** | Centered closing block with mailto button |
-| **Motion** | Framer Motion: `FadeInUp` wrappers, `whileInView`, staggered children, `whileHover` / `whileTap` |
-| **Footer** | Minimal (imabhishek relies on CTA; we’ll keep a slim Rahul footer) |
-
-### 1.3 Key Design Elements We Will Adopt
-
-1. Narrow `max-w-4xl` single-column composition  
-2. Avatar-led hero (profile image + location + socials | name + title + bio + CTA)  
-3. Icon-badge + gradient section titles + expanding underline  
-4. Blue/cyan accent system (replacing pink/violet)  
-5. Skills as hoverable icon grid  
-6. Project cards as horizontal image + text layouts  
-7. Experience as clean typographic list (no GlowCard/Lottie)  
-8. Sticky frosted header with clock + theme toggle  
-9. Framer Motion section reveals and micro-interactions  
-10. CSS variable–based light/dark theming (imabhishek tokens exist but dark is forced — we enable both)
+> Personal internet real estate for **Rahul Gupta**.  
+> Domain identity: **rahulspace** — calm, premium, quietly cosmic.  
+> Work is the center of gravity. Life orbits around it.
 
 ---
 
-## 2. Detailed Implementation Plan
+## 0. What This Plan Is *Not* Copying
 
-### 2.1 New Folder Structure
+Explicit anti-clone list. Do not reproduce any of the following from the previous `@imabhishek/` inspiration, the current half-revamped site, generic portfolio templates, or reference sites (arpitbhayani.me / ni5arga.com) beyond *spirit* (calm typography, readability, breathing room).
+
+### Layout & architecture — DO NOT COPY
+- Narrow `max-w-4xl` single-column “everything stacked the same way” editorial template
+- Avatar-left / bio-right split hero as the page’s defining composition
+- Sticky frosted header with live clock + mono logo pattern
+- Icon-badge-in-gradient-box + gradient title + animated full-width underline section headers
+- Typical portfolio section order: About → Experience → Skills → Education → Projects → Misc → Contact
+- Horizontal project cards (image ⅓ + text ⅔ rows)
+- Skills as a dense icon grid with hover-scale tiles
+- Experience as a plain stacked company/role list with blue accent role text
+- Closing centered “mailto CTA” block as the finale pattern
+- Card-heavy surfaces with blue/cyan border glow (`border-blue-500/30`, translucent panels)
+- Dashboard-like multi-widget first viewport
+
+### Visual / motion tropes — DO NOT COPY
+- Blue/cyan-as-primary identity system (generic “dev portfolio blue”)
+- Inter + JetBrains Mono as the default “AI portfolio” pairing (use a distinct soft sans + optional quiet display)
+- Flashy neon nebula, particle storms, or SpaceX marketing pastiche
+- Theme toggle that only crossfades icons / fades the page
+- Generic FadeInUp on every section as the only motion language
+
+### Content structure — DO NOT COPY
+- Treating “Nihongo” or hobbies as orphaned portfolio sections with the same header pattern as Work
+- Leading with education / cert stacks before work
+- Template “About me” wall of text as the first scroll destination
+
+### What we *keep* (spirit only)
+- Calm, readable, professional atmosphere (arpitbhayani / ni5arga energy — not their layouts)
+- High-quality micro-motion via Framer Motion
+- A well-sized, human profile/avatar presence
+- All of Rahul’s real content + EmailJS contact logic
+- Full dark + light themes with `localStorage` persistence
+
+---
+
+## 1. Concept — “My Space”
+
+**Metaphor:** The site is a quiet personal loft in orbit — not a résumé PDF converted to HTML, and not a sci-fi landing page.
+
+- **Gravity well = Work** — projects and craft occupy the primary scroll path.
+- **Orbit = Life** — blogs, anime, hobbies, notes, 日本語 sit in a secondary constellation that feels personal, not “section 6 of a portfolio.”
+- **Atmosphere = Space** — distant stars, slow nebula drift, soft parallax. Always subtle. Never the main attraction.
+
+**Brand signal:** The wordmark **rahulspace** must be hero-level in the first viewport (not only nav text). Name and domain feel like one identity.
+
+---
+
+## 2. Information Architecture (Original)
+
+### 2.1 Navigation concept — “Dual Horizon”
+
+Not a long list of section anchors (About, Experience, Skills…).
+
+**Header (Dock)**
+- Left: `rahulspace` wordmark (primary brand)
+- Center / right: two destinations only — **Work** · **Life**
+- Far right: theme control (delightful transition) + optional “say hi” text link
+- No live clock. No icon-badge nav. No 6–8 anchor soup.
+
+Deep links still exist as ids for Work / Life subsections, but the *concept* of nav is two horizons, not a sitemap dump.
+
+### 2.2 Page composition (new section order)
+
+| Order | Zone | Purpose |
+|------:|------|---------|
+| 1 | **Arrival** | Brand-first entrance: rahulspace + one line + avatar + soft CTA into Work |
+| 2 | **Signal** | Tiny “currently” strip — what Rahul is building / exploring *now* (1 line, not stats) |
+| 3 | **Builds** | Primary: projects as a vertical mission journal (Work gravity) |
+| 4 | **Craft** | How the work gets made — experience + tools woven as one narrative, not two templates |
+| 5 | **Life Orbit** | Personal constellation: Notes & learnings · Watching · Moving · 日本語 |
+| 6 | **Open Channel** | Contact — quiet, human, form secondary to intent |
+| 7 | **Colophon** | Slim footer — location, year, socials |
+
+Education is **not** a top-level landmark. Fold a single quiet line into Craft or Life if needed — never a GlowCard-style education chapter.
+
+### 2.3 Why this is original vs typical portfolios
+
+- Work leads; personal life is a designed second act, not leftover sections.
+- Experience and skills are one **Craft** story, not twin clones of the same list UI.
+- Life uses a **constellation / mosaic** layout, not repeated section headers.
+- Nav is binary (Work / Life), not an anchor laundry list.
+- Space identity is atmospheric background + theme ritual — not a theme park.
+
+---
+
+## 3. Visual Language
+
+### 3.1 Atmosphere (calm premium)
+- Spacious margins, generous vertical rhythm, low visual noise.
+- Soft modern sans for UI/body (e.g. **Plus Jakarta Sans** or **Geist** — not Inter default bias).
+- Optional quiet secondary for wordmark / arrival only (restrained, not newspaper serif).
+- Backgrounds: soft layered gradients + very low-contrast star field — never flat void, never cluttered.
+
+### 3.2 Color system (space-neutral, not “dev blue”)
+Avoid purple-on-white, cream+terracotta, and cyan-glow clichés.
+
+**Direction: Lunar graphite + soft lunar silver + one restrained accent**
+
+| Token | Light | Dark |
+|-------|-------|------|
+| Background | warm off-white / soft chalk (`#f7f6f3` family) | deep space ink (`#0b0c10` family) |
+| Foreground | near-ink | soft white |
+| Muted | stone gray | cool gray |
+| Accent | muted teal-slate or soft amber-moon (pick one, use sparingly) | same hue, lifted for dark |
+| Stars / particles | low-opacity ink dots | low-opacity white dots |
+
+Accent is for links, focus rings, and rare highlights — not for bordering every card.
+
+### 3.3 Cards policy
+- Default: **no cards**.
+- Cards only when interaction needs a container (e.g. contact form fields, Life Orbit selectable notes).
+- Builds (projects): typographic journal entries with optional full-bleed / edge-aware media — not inset media cards in the hero, and not template project cards.
+
+### 3.4 First viewport budget (Arrival)
+Exactly:
+1. **rahulspace** brand signal (hero-level)
+2. One short supporting sentence
+3. One CTA group (e.g. View builds · Say hi)
+4. Profile/avatar as a calm visual anchor (keep a generous, nice size — spirit of the prior good avatar scale)
+
+No stats, no skill pills, no schedule strips, no floating badges on the avatar.
+
+---
+
+## 4. Space Motions (Framer Motion — subtle)
+
+All space motion must feel *restrained* — SpaceX quiet competence, not fireworks.
+
+| Layer | Behavior |
+|-------|----------|
+| **Starfield** | Fixed/absolute canvas of soft dots; opacity breathes slowly; parallax on pointer/scroll at tiny amplitude |
+| **Nebula wash** | Two large blurred gradient blobs drifting on a 20–40s loop; theme-aware colors |
+| **Arrival avatar** | Soft float / micro-orbit (1–2px) — barely perceptible |
+| **Scroll reveals** | Sparse: opacity + slight y; staggered only where it clarifies hierarchy |
+| **Build entries** | Number / index ticks in; media gently reveals |
+| **Life Orbit** | Nodes fade/scale in as a constellation — one coordinated sequence, not per-card bounce |
+| **Micro-interactions** | Link underline grow, button press scale, theme control anticipation |
+
+Respect `prefers-reduced-motion`: disable drift/parallax; keep instant theme swap without spectacle.
+
+---
+
+## 5. Theme System + Delightful Transition
+
+### 5.1 Persistence
+- `localStorage` key: `rahulspace-theme` → `'light' | 'dark'`
+- Fallback: `prefers-color-scheme`
+- Blocking inline script in `<head>` to set `html.dark` before paint (no FOUC)
+
+### 5.2 Transition concept — “Horizon Wipe”
+On toggle (playful, memorable, still premium):
+
+1. Capture click origin (theme control).
+2. Expand a **circular wipe** from that point across the viewport (clip-path or mask), carrying the *destination* theme.
+3. Mid-wipe: brief soft **star twinkle burst** (8–16 particles, short life, low opacity) — cute, not chaotic.
+4. Settle into new theme; icon morphs moon ↔ sun with a small orbital arc.
+
+Not: hard cut, opacity-only fade, or full-screen flash.
+
+### 5.3 Implementation sketch
+- `ThemeProvider` owns theme state + `isTransitioning`
+- `ThemeTransitionOverlay` (portal/fixed) runs the wipe; on complete, commit class + persist
+- Duration ~600–900ms; interruptible if user toggles again quickly
+
+---
+
+## 6. Component Architecture (New)
 
 ```
-Rahuls_Portfolio/
-├── app/
-│   ├── layout.js                 # MODIFY — ThemeProvider, fonts, globals.css
-│   ├── page.js                   # MODIFY — new section composition + FadeInUp
-│   ├── globals.css               # CREATE — replace Sass; theme tokens
-│   └── components/
-│       ├── Header.jsx            # CREATE — sticky nav + clock + theme toggle
-│       ├── Footer.jsx            # REWRITE — slim themed footer
-│       ├── ThemeProvider.jsx     # CREATE — dark/light + localStorage
-│       ├── ThemeToggle.jsx       # CREATE — sun/moon toggle
-│       ├── SectionHeading.jsx    # CREATE — reusable icon + gradient title
-│       ├── MotionWrapper.jsx     # CREATE — FadeInUp, FadeIn, SlideIn*
-│       ├── HeroSection.jsx       # CREATE — avatar hero
-│       ├── WorkExperience.jsx    # CREATE — experience list
-│       ├── TechnicalSkills.jsx   # CREATE — skills grid
-│       ├── Education.jsx         # CREATE — education list
-│       ├── Projects.jsx          # CREATE — horizontal project cards
-│       ├── Nihongo.jsx           # CREATE — Japanese study / certs
-│       ├── Contact.jsx           # CREATE — contact + form (restyle)
-│       ├── ContactForm.jsx       # CREATE — themed EmailJS form
-│       ├── ScrollToTop.jsx       # REWRITE — themed button
-│       └── (delete old homepage/, navbar.jsx, helper/, css/)
-├── lib/
-│   └── utils.js                  # CREATE — cn() helper
-├── utils/data/                   # KEEP — all Rahul content unchanged
-├── public/                       # KEEP — profile, project images, skill SVGs
-├── package.json                  # MODIFY — add framer-motion, clsx, tailwind-merge
-├── tailwind.config.js            # MODIFY — darkMode: 'class', theme tokens
-└── REVAMP_PLAN.md                # THIS FILE
+app/
+├── layout.js                 # fonts, ThemeProvider, Dock, atmosphere shell
+├── page.js                   # Arrival → Signal → Builds → Craft → LifeOrbit → OpenChannel
+├── globals.css               # lunar tokens, reduced-motion, atmosphere helpers
+└── components/
+    ├── atmosphere/
+    │   ├── Starfield.jsx         # soft particles / distant stars
+    │   └── NebulaWash.jsx        # slow gradient drift
+    ├── theme/
+    │   ├── ThemeProvider.jsx
+    │   ├── ThemeToggle.jsx
+    │   └── ThemeHorizonWipe.jsx  # circular wipe + twinkle
+    ├── Dock.jsx                  # rahulspace wordmark + Work/Life + theme
+    ├── Arrival.jsx               # brand-first entrance + avatar
+    ├── SignalStrip.jsx           # “currently …” one-liner
+    ├── Builds.jsx                # primary projects journal
+    ├── BuildEntry.jsx            # single project entry
+    ├── Craft.jsx                 # experience + tools as one narrative
+    ├── LifeOrbit.jsx             # personal constellation wrapper
+    ├── orbit/
+    │   ├── Notes.jsx             # blogs & learnings
+    │   ├── Watching.jsx          # anime currently watching
+    │   ├── Moving.jsx            # gym, hiking, snooker, etc.
+    │   └── Nihongo.jsx           # 日本語 (reframed inside Life)
+    ├── OpenChannel.jsx           # contact intro + form
+    ├── ContactForm.jsx           # EmailJS (logic preserved)
+    ├── Colophon.jsx              # footer
+    ├── ScrollToTop.jsx
+    └── motion/
+        └── Reveal.jsx            # sparse reveal primitives (not blanket FadeInUp)
+lib/utils.js
+utils/data/                       # existing + new life-orbit data files
 ```
 
-### 2.2 Files to Create / Modify / Delete
-
-#### Create
-| File | Purpose |
+### New data files (placeholders OK; real facts only)
+| File | Content |
 |------|---------|
-| `app/globals.css` | CSS variables for light/dark; base styles |
-| `app/components/ThemeProvider.jsx` | Theme context + localStorage + FOUC prevention script |
-| `app/components/ThemeToggle.jsx` | Animated sun/moon button |
-| `app/components/Header.jsx` | Sticky header: brand, nav anchors, clock, toggle |
-| `app/components/SectionHeading.jsx` | Shared section header pattern |
-| `app/components/MotionWrapper.jsx` | FadeInUp / FadeIn / SlideInLeft / SlideInRight |
-| `app/components/HeroSection.jsx` | New hero |
-| `app/components/WorkExperience.jsx` | Experience section |
-| `app/components/TechnicalSkills.jsx` | Skills grid |
-| `app/components/Education.jsx` | Education section |
-| `app/components/Projects.jsx` | Projects section |
-| `app/components/Nihongo.jsx` | 日本語 / JLPT section |
-| `app/components/Contact.jsx` | Contact section wrapper |
-| `app/components/ContactForm.jsx` | Restyled form (same EmailJS logic) |
-| `app/components/Footer.jsx` | Slim footer |
-| `app/components/ScrollToTop.jsx` | Scroll-to-top FAB |
-| `lib/utils.js` | `cn()` with clsx + tailwind-merge |
+| `utils/data/signal.js` | Current focus line |
+| `utils/data/notes.js` | Blog/learning entries (title, date, link/excerpt) |
+| `utils/data/watching.js` | Anime list (title, status, note) |
+| `utils/data/moving.js` | Hobbies (gym, hiking, snooker, …) |
+| Existing | `personal-data`, `projects-data`, `experience`, `skills`, `contactsData`, educations (demoted) |
 
-#### Modify
-| File | Changes |
-|------|---------|
-| `app/layout.js` | New fonts, ThemeProvider, Header, globals.css; remove old Sass/navbar |
-| `app/page.js` | Compose new sections with FadeInUp |
-| `package.json` | Add `framer-motion`, `clsx`, `tailwind-merge` |
-| `tailwind.config.js` | `darkMode: 'class'`, semantic color tokens |
-| `utils/data/*` | Keep content; optionally enrich experience with shortDesc if needed (no invented facts — use existing titles/companies only) |
+---
 
-#### Delete (after replacements work)
-| Path | Reason |
+## 7. Section Design Notes (Unique UI)
+
+### Arrival
+- Full-bleed atmospheric background already from shell.
+- Wordmark large; name optional subtitle or integrated (“Rahul · rahulspace”).
+- Avatar generous, soft ring, no badge overlays.
+- CTAs: text-forward, not pill-cluster.
+
+### Signal
+- Single quiet line under Arrival: e.g. “Currently exploring GenAI & agentic workflows.”
+- Feels like a status, not a feature grid.
+
+### Builds (primary)
+- Vertical **mission journal**: `01 / ShoeEsy`, title, short thesis, then bullets, then links.
+- Media can sit full-width *below* the thesis or as a soft bleed — avoid template side-by-side cards.
+- Clear visual weight: this is the longest, most important zone.
+
+### Craft
+- Left narrative: roles over time as a continuous story (timeline spine or year markers — not GlowCards).
+- Tools appear as a quiet inline constellation or compact wrap list under the story — not a separate “Tech Arsenal” marquee/grid chapter.
+- Education: one understated line if included at all.
+
+### Life Orbit
+- One composition titled for life, not four cloned sections.
+- Layout idea: **constellation grid** — Notes / Watching / Moving / 日本語 as four nodes with different internal rhythms (list, chips, short notes) sharing one visual system.
+- Personal, warm, still typographically calm.
+
+### Open Channel
+- Short human invite + mailto + form.
+- Form is interaction-container (allowed to feel like a panel); surrounding page stays un-carded.
+
+---
+
+## 8. Implementation Order
+
+1. Rewrite this plan ✓  
+2. Tokens + fonts + atmosphere shell (`globals.css`, Starfield, NebulaWash)  
+3. ThemeProvider + Horizon Wipe + Dock  
+4. Arrival + Signal  
+5. Builds (projects — primary polish)  
+6. Craft (experience + skills merge)  
+7. Life Orbit + data stubs  
+8. Open Channel + Colophon + ScrollToTop  
+9. Remove obsolete imabhishek-shaped components / dead patterns  
+10. `prefers-reduced-motion`, responsive pass, `npm run build`
+
+---
+
+## 9. Acceptance Criteria
+
+- [ ] Feels like **rahulspace.com** — personal space, not a cloned portfolio template  
+- [ ] Work/Builds is clearly the primary focus; Life is a designed second act  
+- [ ] Original IA: Arrival → Signal → Builds → Craft → Life Orbit → Open Channel  
+- [ ] Dual Horizon nav (Work / Life), not 6+ section anchors  
+- [ ] Dark + light polished; preference persisted; no FOUC  
+- [ ] Theme toggle uses memorable Horizon Wipe + soft twinkle (with reduced-motion fallback)  
+- [ ] Subtle space atmosphere via Framer Motion (stars, nebula, micro-float) — never distracting  
+- [ ] No copied layout/structure from imabhishek plan or reference sites  
+- [ ] Avatar remains a strong, well-sized presence in Arrival  
+- [ ] Contact EmailJS logic preserved  
+- [ ] Responsive; builds cleanly  
+
+---
+
+## 10. Content Mapping
+
+| Zone | Source |
 |------|--------|
-| `app/css/globals.scss` | Replaced by `globals.css` |
-| `app/css/card.scss` | Glow-card styles unused |
-| `app/components/navbar.jsx` | Replaced by Header |
-| `app/components/footer.jsx` | Replaced |
-| `app/components/homepage/**` | Fully rebuilt |
-| `app/components/helper/**` | Lottie/GlowCard no longer used |
-
-### 2.3 Dark / Light Mode Strategy
-
-1. **Tailwind** `darkMode: 'class'` — toggle `.dark` on `<html>`.  
-2. **CSS variables** in `:root` (light) and `.dark` (dark) for:
-   - `--background`, `--foreground`, `--card`, `--muted`, `--muted-foreground`
-   - `--accent`, `--accent-foreground`, `--border`, `--primary`, `--ring`
-3. **ThemeProvider** (client):
-   - Read `localStorage.theme` (`'light' | 'dark'`) on mount
-   - Fallback: `prefers-color-scheme`
-   - Persist on toggle
-4. **Inline blocking script** in `layout.js` `<head>` to set class before paint (prevent FOUC).  
-5. **ThemeToggle** in Header — Framer Motion icon swap (sun ↔ moon).  
-6. Components use semantic classes (`bg-background`, `text-foreground`, `text-muted-foreground`, `border-border`, accent utilities) so both themes stay cohesive.
-
-### 2.4 Framer Motion Animation Map
-
-| Component | Animation | Trigger |
-|-----------|-----------|---------|
-| `Header` | Fade + slide down (`y: -20 → 0`) | Mount |
-| `ThemeToggle` | Rotate / crossfade icons | Click |
-| Page sections via `FadeInUp` | `opacity 0→1`, `y: 20→0`, staggered delays | Mount (initial load) |
-| `SectionHeading` | Icon: scale+rotate in; underline: width 0→100% | `whileInView` (once) |
-| `HeroSection` | Avatar scale-in; text cascade; social icons stagger; CTA hover scale | Mount + hover |
-| `WorkExperience` | Entry fade-up staggered by index | `whileInView` |
-| `TechnicalSkills` | Grid items stagger fade-up; hover `scale 1.05` | `whileInView` + hover |
-| `Education` | Same pattern as experience | `whileInView` |
-| `Projects` | Card fade-up; link `whileHover` / `whileTap` | `whileInView` + hover |
-| `Nihongo` | Cert link cards scale-in + hover lift | `whileInView` + hover |
-| `Contact` / form | Fade-in; button hover/tap | `whileInView` + hover |
-| `ScrollToTop` | Fade when visible; tap scale | Scroll position |
-| `Footer` | Subtle fade-in | `whileInView` |
+| Arrival | `personalData` (name, designation, description, profile, socials) |
+| Signal | `signal.js` (new; seed from current GenAI/agentic interest) |
+| Builds | `projectsData` |
+| Craft | `experiences` + `skillsData` (+ optional quiet education line) |
+| Life Orbit → Notes | `notes.js` (new) |
+| Life Orbit → Watching | `watching.js` (new) |
+| Life Orbit → Moving | `moving.js` (new; gym, hiking, snooker from bio spirit) |
+| Life Orbit → 日本語 | existing Nihongo certs / JLPT links |
+| Open Channel | ContactForm + `contactsData` / email |
+| Colophon | location, year, LinkedIn |
 
 ---
 
-## 3. Implementation Order
-
-1. Install deps (`framer-motion`, `clsx`, `tailwind-merge`)  
-2. Update `tailwind.config.js` + create `app/globals.css` + `lib/utils.js`  
-3. Build `ThemeProvider` + `ThemeToggle` + wire into `layout.js`  
-4. Build `MotionWrapper`, `SectionHeading`, `Header`, `Footer`, `ScrollToTop`  
-5. Build content sections: Hero → Experience → Skills → Education → Projects → Nihongo → Contact  
-6. Rewrite `page.js` composition  
-7. Remove obsolete files / Sass  
-8. Verify dark/light persistence, responsiveness, animations  
-
----
-
-## 4. Final Checklist (Acceptance Criteria)
-
-- [x] Dark and light mode both look polished and switch cleanly  
-- [x] Theme preference persists via `localStorage`  
-- [x] No FOUC on reload (inline theme script in layout)  
-- [x] All Framer Motion animations feel smooth (no janky layout shifts)  
-- [x] Visual language matches imabhishek quality (narrow layout, section headers, accents, cards)  
-- [x] 100% Rahul content preserved (no Abhishek text/data)  
-- [x] Contact EmailJS form still works (logic preserved, restyled)  
-- [x] Fully responsive (mobile → desktop)  
-- [x] Old pink/violet/GlowCard/Lottie/marquee styles removed  
-- [x] Site builds without errors (`npm run build` ✓)  
-
----
-
-## 5. Content Mapping (Rahul → New Sections)
-
-| New Section | Source Data |
-|-------------|-------------|
-| Hero | `personalData` (name, designation, description, profile, address, socials) |
-| Work Experience | `experiences` |
-| Tech Arsenal / Skills | `skillsData` + `skill-image` SVGs |
-| Education | `educations` |
-| Featured Projects | `projectsData` |
-| 日本語 | Existing Nihongo certs / JLPT links |
-| Contact | ContactForm + `personalData` / `contactsData` |
-| Footer | “Made with ❤️ in India” + LinkedIn |
-
-*Proceeding to implementation after this plan is saved.*
+*Next step: implement this plan end-to-end, replacing the previous imabhishek-shaped composition.*

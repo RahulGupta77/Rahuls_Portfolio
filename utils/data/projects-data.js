@@ -1,56 +1,60 @@
 import qtripDynamic from "/public/image/qtripDynamic.png";
 import shoeEsy from "/public/image/shoeEsy.png";
 import sortingVisualiser from "/public/image/sortingVisualiser.png";
-import weatherApp from "/public/image/weatherApp.png";
 
 export const projectsData = [
   {
     id: 1,
-    name: "ShoeEsy",
+    name: "ConnectU",
+    tag: "Microservices",
     description: [
-      "Utilized React, Redux, and Tailwind CSS to develop a dynamic E-commerce platform, achieving a 40% improvement in load time",
-      "Implemented carousels, pagination, and sidebar filters for products, boosting user navigation and engagement by 35%",
-      "Integrated search suggestions with debouncing, enhancing search efficiency and increasing user satisfaction by 25%",
+      "Social networking platform on a Spring Boot microservices backend with 7 independently deployable services: API Gateway, Config Server, Service Discovery, User, Post, Connections, and Notification",
+      "Centralized configuration via Spring Cloud Config Server and an API Gateway for routing across distributed services",
+      "Clear service boundaries and data ownership for scalable, independently deployable components",
+    ],
+    code: null,
+    demo: null,
+    image: null,
+    stack: ["Spring Boot", "Spring Cloud", "API Gateway", "Microservices"],
+  },
+  {
+    id: 2,
+    name: "ShoeEsy",
+    tag: "Full-stack",
+    description: [
+      "E-commerce platform with React, Redux, and Tailwind - faster loads, carousels, filters, and debounced search suggestions",
+      "Pagination and sidebar filters for product discovery",
+      "Client-side search UX tuned for snappy navigation",
     ],
     code: "https://github.com/RahulGupta77/ShoeEsy",
     demo: "https://shoe-esy.vercel.app/",
     image: shoeEsy,
+    stack: ["React", "Redux", "Tailwind"],
   },
-
   {
-    id: 2,
-    name: "Qtrip Dynamic",
+    id: 3,
+    name: "QTrip Dynamic",
+    tag: "Frontend",
     description: [
-      "QTrip is a travel website designed for adventurers seeking diverse experiences across various cities",
-      "Created engaging web pages using HTML, CSS, Bootstrap, and enhanced their functionality with JavaScript to provide a dynamic user experience",
-      "Utilized localStorage to save user preferences on the client side, providing a seamless and personalized experience for returning user",
+      "Travel experiences site with dynamic city pages and client-side preference persistence via localStorage",
+      "Built with HTML, CSS, Bootstrap, and JavaScript for a responsive adventure-booking feel",
     ],
     code: "https://github.com/RahulGupta77/QTrip-Dynamic.git",
     demo: "https://q-trip-dynamic-rho.vercel.app/",
     image: qtripDynamic,
+    stack: ["JavaScript", "Bootstrap"],
   },
   {
-    id: 3,
+    id: 4,
     name: "Sorting Visualiser",
+    tag: "Algorithms",
     description: [
-      "Sorting Visualizer is an interactive website designed to demonstrate the working mechanisms of various sorting algorithms",
-      "Leveraged React.js hooks to create engaging animations and effects, enhancing the learning experience",
-      "Enabled users to adjust sorting speed, array size, randomize arrays, and select from five different sorting algorithms: Merge Sort, Quick Sort, Bubble Sort, Selection Sort, and Insertion Sort",
+      "Interactive visualizer for Merge, Quick, Bubble, Selection, and Insertion sort - with speed and size controls",
+      "Built with React hooks for smooth step-by-step animations",
     ],
     code: "https://github.com/RahulGupta77/Sorting-Visualizer",
     demo: "https://rahuls-sorting-visualizer.netlify.app/",
     image: sortingVisualiser,
-  },
-  {
-    id: 4,
-    name: "Weather App",
-    description: [
-      "Weather Web App provides real-time weather information with an intuitive and dynamic interface",
-      "Allows users to fetch weather data for thousands of cities using the OpenWeather API",
-      "Built a single page application with JavaScript DOM manipulation, HTML5, and CSS3, featuring two tabs for a seamless user experience",
-    ],
-    code: "https://github.com/RahulGupta77/Weather-app",
-    demo: "https://weather-app-rahul-gupta.netlify.app/",
-    image: weatherApp,
+    stack: ["React", "Algorithms"],
   },
 ];

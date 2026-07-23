@@ -51,7 +51,7 @@ export default function ContactForm() {
       );
 
       if (res.status === 200) {
-        toast.success("Message sent successfully!");
+        toast.success("Message sent successfully");
         setUserInput({ name: "", email: "", message: "" });
       } else {
         toast.error("Failed to send message via Email");
@@ -63,21 +63,20 @@ export default function ContactForm() {
   };
 
   const inputClass =
-    "w-full rounded-md border border-border bg-background px-3 py-2 outline-none ring-0 transition-all duration-300 focus:border-sky-500";
+    "w-full rounded-md border border-border bg-[var(--surface)] px-3 py-2.5 text-foreground outline-none transition-colors placeholder:text-muted-foreground focus:border-accent focus:ring-1 focus:ring-accent/40";
 
   return (
-    <div className="rounded-xl border border-sky-500/30 bg-surface p-5 lg:p-6">
-      <p className="mb-2 text-sm text-muted-foreground">
-        If you have any questions or concerns, please don&apos;t hesitate to
-        contact me.
-      </p>
-
-      <div className="mt-6 flex flex-col gap-4">
+    <form
+      onSubmit={handleSendMail}
+      className="rounded-lg border border-border bg-[var(--surface)] p-5 sm:p-6"
+    >
+      <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-2">
-          <label className="text-sm font-medium text-foreground">
-            Your Name
+          <label htmlFor="name" className="text-sm font-medium text-foreground">
+            Name
           </label>
           <input
+            id="name"
             className={inputClass}
             type="text"
             maxLength={100}
@@ -91,10 +90,11 @@ export default function ContactForm() {
         </div>
 
         <div className="flex flex-col gap-2">
-          <label className="text-sm font-medium text-foreground">
-            Your Email
+          <label htmlFor="email" className="text-sm font-medium text-foreground">
+            Email
           </label>
           <input
+            id="email"
             className={inputClass}
             type="email"
             maxLength={100}
@@ -112,16 +112,20 @@ export default function ContactForm() {
             }}
           />
           {error.email && (
-            <p className="text-sm text-red-400">Please provide a valid email!</p>
+            <p className="text-sm text-red-400">Please provide a valid email</p>
           )}
         </div>
 
         <div className="flex flex-col gap-2">
-          <label className="text-sm font-medium text-foreground">
-            Your Message
+          <label
+            htmlFor="message"
+            className="text-sm font-medium text-foreground"
+          >
+            Message
           </label>
           <textarea
-            className={inputClass}
+            id="message"
+            className={`${inputClass} resize-y min-h-[6rem]`}
             maxLength={500}
             name="message"
             required
@@ -134,24 +138,23 @@ export default function ContactForm() {
           />
         </div>
 
-        <div className="flex flex-col items-start gap-2">
+        <div className="flex flex-col items-start gap-2 pt-1">
           {error.required && (
             <p className="text-sm text-red-400">
-              Name, Email and Message are required!
+              Name, email, and message are required
             </p>
           )}
           <motion.button
-            type="button"
+            type="submit"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            onClick={handleSendMail}
-            className="flex items-center gap-2 rounded-sm border border-sky-600/40 px-5 py-2.5 text-sm font-medium text-sky-700 transition-all duration-300 hover:bg-sky-500/10 dark:border-sky-700/50 dark:text-sky-300 dark:hover:bg-sky-900/30"
+            className="inline-flex items-center gap-2 rounded-md border border-border bg-transparent px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-accent hover:text-accent"
           >
-            <span>Send Message</span>
-            <TbMailForward size={18} />
+            <span>Send message</span>
+            <TbMailForward size={18} className="text-icon" />
           </motion.button>
         </div>
       </div>
-    </div>
+    </form>
   );
 }
