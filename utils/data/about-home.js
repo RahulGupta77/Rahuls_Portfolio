@@ -1,6 +1,6 @@
 export const aboutHome = {
   tagline:
-    "A place where I build software, explore ideas, document my learning, and share moments beyond code",
+    "Welcome to my digital space where I build software, explore ideas, document my learning, and share moments beyond code",
   paragraphs: [
     {
       id: "now",
@@ -72,7 +72,7 @@ export const aboutHome = {
       {
         label: "Coffee",
         icon: "coffee",
-        detail: "Coffee to keep me awake",
+        detail: "Keeps me awake",
       },
     ],
   },

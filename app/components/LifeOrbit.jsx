@@ -1,8 +1,8 @@
 "use client";
 
-import { FaFlask, FaBalanceScale } from "react-icons/fa";
+import { FaFlask } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
-import { GiThroneKing } from "react-icons/gi";
+import { GiBearFace, GiThroneKing } from "react-icons/gi";
 import { MdSelfImprovement } from "react-icons/md";
 import StrawHatIcon from "./icons/StrawHatIcon";
 import { funFacts } from "@/utils/data/fun-facts";
@@ -15,7 +15,7 @@ const SHOW_ICONS = {
   "one-piece": StrawHatIcon,
   got: GiThroneKing,
   bb: FaFlask,
-  saul: FaBalanceScale,
+  bear: GiBearFace,
   default: MdSelfImprovement,
 };
 
@@ -44,7 +44,7 @@ export default function LifeOrbit() {
           Orbit
         </h2>
         <p className="mt-1.5 max-w-lg text-sm text-muted-foreground">
-          Fun facts, shows, stats, and 日本語 - the personal side of my space
+          The personal side of my space
         </p>
       </Reveal>
 

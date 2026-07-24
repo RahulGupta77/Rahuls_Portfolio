@@ -1,18 +1,19 @@
 /** Shows I'm into — web Shows, long-form shows, same shelf. Update anytime. */
 export const watching = [
+
   {
     id: 1,
+    title: "The Bear",
+    status: "Watching",
+    note: "Let it rip",
+    icon: "bear",
+  },
+  {
+    id: 2,
     title: "One Piece",
     status: "Watching",
     note: "The journey continues",
     icon: "one-piece",
-  },
-  {
-    id: 2,
-    title: "Better Call Saul",
-    status: "Watching",
-    note: "Slippin’ Jimmy never misses",
-    icon: "saul",
   },
   {
     id: 3,

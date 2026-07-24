@@ -18,6 +18,6 @@ export const funFacts = [
   {
     id: 4,
     label: "Coffee",
-    fact: "Full-blown addict - code doesn't compile until the second cup hits",
+    fact: "Full-blown addict - day in day out",
   },
 ];

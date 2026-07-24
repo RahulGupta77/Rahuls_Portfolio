@@ -18,7 +18,7 @@ export default function OpenChannel() {
             Open channel
           </h2>
           <p className="mt-2 max-w-sm text-sm leading-relaxed text-muted-foreground">
-            Ideas, games, travelling, movie night, or just
+            Ideas, games, travelling, shows, or just
             a hello - reach out anytime
           </p>
 

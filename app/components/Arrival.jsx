@@ -79,7 +79,7 @@ export default function Arrival() {
             transition={{ duration: 0.5 }}
             className="font-display text-4xl font-semibold tracking-tight text-foreground sm:text-5xl"
           >
-            Hey, I am Rahul Gupta
+            Hey, I am Rahul
           </motion.h1>
 
           <motion.p
