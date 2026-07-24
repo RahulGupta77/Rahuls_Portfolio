@@ -5,10 +5,10 @@ export const personalData = {
   designation: "Software Engineer",
   tagline: "System design · Microservices · Distributed systems",
   description:
-    "Software engineer from Mumbai, currently in Bangalore. I design and build distributed systems and production microservices — from IAM and real-time messaging to TB-scale document pipelines — with a strong focus on system design, reliability, and clean service boundaries.",
+    "Software engineer from Mumbai, currently in Bangalore. I design and build distributed systems and production microservices — from IAM and real-time messaging to document pipelines — with a strong focus on system design, reliability, and clean service boundaries.",
   hometown: "Mumbai",
   address: "Bangalore, India",
-  locationLabel: "From Mumbai · Based in Bangalore",
+  locationLabel: "From Mumbai · Currently in Bangalore",
   email: "rahul@rahulspace.com",
   github: "https://github.com/RahulGupta77",
   linkedIn: "https://www.linkedin.com/in/rahul-gupta-aa60611a7/",

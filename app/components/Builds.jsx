@@ -112,8 +112,7 @@ export default function Builds() {
           Projects
         </h2>
         <p className="mt-1.5 max-w-lg text-sm text-muted-foreground">
-          Featured software projects — Spring Boot microservices and selected
-          full-stack builds
+          Featured software projects
         </p>
       </Reveal>
 

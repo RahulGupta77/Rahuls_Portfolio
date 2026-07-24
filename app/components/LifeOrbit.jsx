@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { FaFlask, FaBalanceScale } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
 import { GiThroneKing } from "react-icons/gi";
@@ -45,7 +44,7 @@ export default function LifeOrbit() {
           Orbit
         </h2>
         <p className="mt-1.5 max-w-lg text-sm text-muted-foreground">
-          Fun facts, shows, PRs, and 日本語 - the personal side of my space
+          Fun facts, shows, stats, and 日本語 - the personal side of my space
         </p>
       </Reveal>
 
@@ -63,7 +62,7 @@ export default function LifeOrbit() {
           </ul>
         </OrbitNode>
 
-        <OrbitNode title="Shows & Anime" delay={0.05}>
+        <OrbitNode title="Shows" delay={0.05}>
           <ul className="space-y-2.5">
             {watching.map((show) => {
               const Icon = SHOW_ICONS[show.icon] || SHOW_ICONS.default;
@@ -87,7 +86,7 @@ export default function LifeOrbit() {
           </ul>
         </OrbitNode>
 
-        <OrbitNode title="PRs" delay={0.07}>
+        <OrbitNode title="Stats" delay={0.07}>
           <ul className="grid grid-cols-2 gap-3">
             {moving.map((item) => (
               <li
@@ -113,7 +112,7 @@ export default function LifeOrbit() {
           <ul className="space-y-1.5">
             {nihongo.certificates.map((cert) => (
               <li key={cert.title}>
-                <Link
+                <a
                   href={cert.url}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -121,7 +120,7 @@ export default function LifeOrbit() {
                 >
                   {cert.title}
                   <FiExternalLink className="h-3 w-3 text-icon group-hover:opacity-80" />
-                </Link>
+                </a>
               </li>
             ))}
           </ul>

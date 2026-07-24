@@ -3,6 +3,7 @@
 import {
   MdOutlineDirectionsRun,
   MdOutlineHiking,
+  MdOutlineLocalCafe,
   MdOutlineMenuBook,
   MdOutlinePool,
   MdSelfImprovement,
@@ -19,6 +20,7 @@ const ICONS = {
   reading: MdOutlineMenuBook,
   shows: MdOutlineLiveTv,
   swimming: MdOutlinePool,
+  coffee: MdOutlineLocalCafe,
   default: MdSelfImprovement,
 };
 

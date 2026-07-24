@@ -10,12 +10,12 @@ export const siteConfig = {
   language: "en",
 
   // Under 60 characters for search result titles
-  title: "Rahul Gupta | Software Engineer in Bangalore",
+  title: "Rahul Gupta | Building Software, AI & Ideas",
   titleTemplate: "%s | Rahul Gupta",
 
   // ~155 characters — clear summary for SERPs and social
   description:
-    "Software engineer in Bangalore (from Mumbai). I build distributed systems and production microservices focused on system design, IAM, and real-time messaging.",
+    "Software engineer in Bangalore (from Mumbai). I build software solutions, microservices, reliable backends, and frontend applications focused on system design, IAM, and real-time messaging.",
 
   keywords: [
     "Rahul Gupta",
@@ -52,10 +52,11 @@ export const siteConfig = {
   jobTitle: personalData.designation,
   worksFor: {
     name: "Atlas AI",
-    url: "https://www.linkedin.com/company/atlas-ai",
+    url: "https://helloatlas.in",
   },
   alumniOf: {
     name: "Maharashtra Institute of Technology, Pune",
+    url: "https://mituniversity.ac.in/",
     degree: "B.Tech in Computer Science and Engineering",
   },
   location: {

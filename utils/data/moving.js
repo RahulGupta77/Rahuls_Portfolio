@@ -1,27 +1,27 @@
-/** Current personal PRs - update anytime. */
+/** Personal lifetime-ish stats — update anytime. */
 export const moving = [
   {
     id: 1,
-    title: "Push-ups",
-    value: "42",
-    unit: "reps",
+    title: "Badminton",
+    value: "264+",
+    unit: "games",
   },
   {
     id: 2,
-    title: "Pull-ups",
-    value: "8",
-    unit: "reps",
+    title: "Running",
+    value: "180+",
+    unit: "kms",
   },
   {
     id: 3,
-    title: "Running",
-    value: "38:04",
-    unit: "min",
+    title: "Coffee",
+    value: "400+",
+    unit: "cups",
   },
   {
     id: 4,
-    title: "Plank",
-    value: "4:48",
-    unit: "min",
+    title: "Shows",
+    value: "14+",
+    unit: "series",
   },
 ];

@@ -3,15 +3,15 @@ export const nihongo = {
   certificates: [
     {
       title: "JLPT N4 Certificate",
-      url: "https://drive.google.com/file/d/1rxuDfS3yI83CYvTRpbAGuRqvQETYLAPz/view",
+      url: "/pdfs/N4_Certificate.pdf",
     },
     {
       title: "JLPT N5 Certificate",
-      url: "https://drive.google.com/file/d/1TmwzxpZA0AYEWyttwmr96bpQ_jGOFPeI/view",
+      url: "/pdfs/N5_Certificate.pdf",
     },
     {
       title: "Japan Tech Student Exchange Program",
-      url: "https://drive.google.com/file/d/1mCppjvr8g4ceyzTVuUxK1eucIi1XtM5f/view",
+      url: "/pdfs/CodeTots_Certificate.pdf",
     },
   ],
 };

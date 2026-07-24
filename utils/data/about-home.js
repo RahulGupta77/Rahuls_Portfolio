@@ -1,5 +1,6 @@
 export const aboutHome = {
-  tagline: "Software Engineer · System design, microservices & distributed systems",
+  tagline:
+    "A place where I build software, explore ideas, document my learning, and share moments beyond code",
   paragraphs: [
     {
       id: "now",
@@ -8,12 +9,12 @@ export const aboutHome = {
         {
           type: "link",
           value: "Atlas AI",
-          href: "https://www.linkedin.com/company/atlas-ai",
+          href: "https://helloatlas.in",
         },
         {
           type: "text",
           value:
-            " in Bangalore, where I own production microservices (OCR & Address) handling TB-scale document ingestion for NBFC clients. I build IAM platforms, WebSocket real-time messaging, and move systems from monoliths to distributed async architectures.",
+            " in Bangalore, where I own production microservices (OCR & Address) handling document ingestion for NBFC clients. I build IAM platforms, WebSocket real-time messaging, and move systems from monoliths to distributed async architectures.",
         },
       ],
     },
@@ -35,14 +36,14 @@ export const aboutHome = {
         {
           type: "text",
           value:
-            "Originally from Mumbai, now based in Bangalore. When I’m offline you’ll find me playing badminton, out for a run, reading, or deep into shows & anime.",
+            "Originally from Mumbai, currently in Bangalore. When I’m offline you’ll find me on a badminton court, out for a run, with a book, or lost in a good shows.",
         },
       ],
     },
   ],
   interests: {
     title: "Beyond the keyboard",
-    items: [
+    items: [  
       {
         label: "Badminton",
         icon: "badminton",
@@ -59,9 +60,9 @@ export const aboutHome = {
         detail: "Weekends outdoors when I can",
       },
       {
-        label: "Shows & Anime",
+        label: "Shows",
         icon: "shows",
-        detail: "The One Piece is real",
+        detail: "Binge Watch! Binge Watch!",
       },
       {
         label: "Swimming",
@@ -69,9 +70,9 @@ export const aboutHome = {
         detail: "Laps to reset the brain",
       },
       {
-        label: "Reading",
-        icon: "reading",
-        detail: "Fiction on rotation",
+        label: "Coffee",
+        icon: "coffee",
+        detail: "Coffee to keep me awake",
       },
     ],
   },

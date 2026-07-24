@@ -1,4 +1,4 @@
-/** TV shows & anime - update anytime */
+/** Shows I'm into — web Shows, long-form shows, same shelf. Update anytime. */
 export const watching = [
   {
     id: 1,

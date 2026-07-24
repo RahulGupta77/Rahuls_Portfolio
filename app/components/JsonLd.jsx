@@ -42,6 +42,7 @@ export default function JsonLd() {
     alumniOf: {
       "@type": "CollegeOrUniversity",
       name: siteConfig.alumniOf.name,
+      url: siteConfig.alumniOf.url,
     },
     sameAs: siteConfig.sameAs,
     knowsAbout: [
